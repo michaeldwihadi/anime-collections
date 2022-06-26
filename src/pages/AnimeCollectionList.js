@@ -162,7 +162,7 @@ const AnimeCollectionList = () => {
                 <TableRow>
                   <TableDesc>{data.collectionName}</TableDesc>
                   <TableImage>
-                    {data.anime ? (
+                    {data.anime &&
                       data.anime.map((anime) => {
                         return (
                           <AnimeListContainer>
@@ -182,28 +182,7 @@ const AnimeCollectionList = () => {
                             </AnimeList>
                           </AnimeListContainer>
                         );
-                      })
-                    ) : (
-                      <AnimeListContainer>
-                        <AnimeList>
-                          <h2>test</h2>
-                        </AnimeList>
-                        {/* <AnimeImg
-                              src={anime.image}
-                              alt={anime.title}
-                            ></AnimeImg>
-                            <AnimeList> */}
-                        {/* <AnimeLink
-                                to="/collection"
-                                state={{
-                                  selectedCollection: `${data.collectionName}`,
-                                }}
-                              >
-                                {anime.title}
-                              </AnimeLink> */}
-                        {/* </AnimeList> */}
-                      </AnimeListContainer>
-                    )}
+                      })}
                   </TableImage>
                   <TableDesc>
                     <RemoveCollectionBtn
