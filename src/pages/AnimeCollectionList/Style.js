@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import { mobile } from "../../responsive";
 
 export const Table = styled.table`
   border-collapse: collapse;
@@ -8,6 +9,9 @@ export const Table = styled.table`
   margin-top: 15px;
   margin-left: 50px;
   margin-bottom: ${(props) => props.marginBottom};
+  ${mobile({
+    "margin-left": "8px",
+  })}
 `;
 
 export const TableDesc = styled.td`
@@ -73,6 +77,9 @@ export const TableRow = styled.tr`
 
 export const AnimeListContainer = styled.ul`
   text-align: center;
+  ${mobile({
+    "padding-left": "0",
+  })}
 `;
 
 export const NewCollectionBtn = styled.button`
@@ -92,4 +99,8 @@ export const NewCollectionBtn = styled.button`
   font-weight: 600;
   border: 1px solid black;
   margin-right: 45px;
+  ${mobile({
+    "margin-left": "100px",
+    float: "none",
+  })}
 `;

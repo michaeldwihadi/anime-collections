@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mobile } from "../../responsive";
 
 export const AnimeImage = styled.img`
   width: 300px;
@@ -16,12 +17,19 @@ export const AnimeTitle = styled.h1`
 
 export const AnimeDetailContainer = styled.div`
   margin-left: -10rem;
+  ${mobile({
+    "margin-left": "4rem",
+  })}
 `;
 
 export const Columns = styled.div`
   float: left;
   width: 50%;
   margin-top: 100px;
+  ${mobile({
+    width: "83%",
+    float: "",
+  })}
 `;
 
 export const Row = styled.div`
@@ -59,4 +67,7 @@ export const CollectionButton = styled.button`
     background-color: black;
     color: white;
   }
+  ${mobile({
+    width: "255px",
+  })}
 `;

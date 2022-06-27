@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import { mobile } from "../../responsive";
 
 export const ModalBackground = styled.div`
   width: 100vw;
@@ -24,6 +25,9 @@ export const ModalContainer = styled.div`
   display: inline-block;
   text-align: center;
   margin-top: 10px;
+  ${mobile({
+    width: "300px",
+  })}
 `;
 
 export const TitleContainer = styled.div`
@@ -114,6 +118,9 @@ export const AddCollectionBtn = styled.button`
     transform: scale(1.02);
     transition: all 0.4s;
   }
+  ${mobile({
+    "padding-left": "8px 110px",
+  })}
 `;
 
 export const FooterLink = styled(Link)`
@@ -164,6 +171,9 @@ export const RightBtn = styled.button`
   cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
+  ${mobile({
+    "margin-right": "14rem",
+  })}
 `;
 
 export const CollectionInput = styled.input`
@@ -171,6 +181,9 @@ export const CollectionInput = styled.input`
   width: 28rem;
   padding: 5px;
   margin-bottom: 35px;
+  ${mobile({
+    width: "16rem",
+  })}
 `;
 
 export const CollectionSubmitBtn = styled.input`
@@ -191,4 +204,7 @@ export const CollectionSubmitBtn = styled.input`
     background-color: white;
     color: black;
   }
+  ${mobile({
+    padding: "7px 113px",
+  })}
 `;

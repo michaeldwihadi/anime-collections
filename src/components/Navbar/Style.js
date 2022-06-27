@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   height: 60px;
+  ${mobile({ height: "50px" })}
 `;
 
 export const Wrapper = styled.div`
@@ -17,6 +19,9 @@ export const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  ${mobile({
+    "font-size": "12px",
+  })}
 `;
 
 export const Center = styled.div`
@@ -32,6 +37,10 @@ export const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  ${mobile({
+    "font-size": "12px",
+    "text-align": "center",
+  })}
 `;
 
 export const MenuItem = styled.div`

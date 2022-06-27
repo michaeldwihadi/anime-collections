@@ -12,7 +12,6 @@ const AnimeList = () => {
   const [page, setPage] = useState(1);
   const limit = 10;
   const { error, data, loading } = useAnimeList(page);
-  console.log("Page" + page);
 
   return (
     <>

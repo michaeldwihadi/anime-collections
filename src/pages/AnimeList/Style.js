@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   display: flex;
@@ -7,6 +8,9 @@ export const Container = styled.div`
   justify-content: flex-start;
   margin-top: 60px;
   margin-bottom: 20px;
+  ${mobile({
+    "margin-left": "-20px",
+  })}
 `;
 
 export const ListContainer = styled(Link)`

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mobile } from "../../responsive";
 
 export const ModalBackground = styled.div`
   width: 100vw;
@@ -28,6 +29,9 @@ export const Title = styled.div`
   display: inline-block;
   text-align: center;
   margin-left: 30px;
+  ${mobile({
+    "margin-left": "0",
+  })}
 `;
 
 export const TitleCloseBtn = styled.button`

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   display: flex;
@@ -29,6 +30,10 @@ export const ListContainer = styled.div`
   &:hover {
     box-shadow: 0 0 20px -5px rgb(0 0 0 / 75%);
   }
+  ${mobile({
+    "margin-left": "38px",
+    "margin-top": "70px",
+  })}
 `;
 
 export const AnimeImage = styled.img`
@@ -65,6 +70,10 @@ export const CollectionTitleContainer = styled.div`
   padding-top: 50px;
   margin-left: 68px;
   font-size: 21px;
+  ${mobile({
+    "margin-left": "5px",
+    "text-align": "center",
+  })}
 `;
 
 export const EditCollectionBtn = styled.button`
@@ -89,6 +98,11 @@ export const EditCollectionBtn = styled.button`
     background-color: white;
     color: black;
   }
+  ${mobile({
+    "margin-top": "0",
+    float: "right",
+    "margin-right": "155px",
+  })}
 `;
 
 export const CollectionTitleName = styled.h2`
