@@ -18,6 +18,7 @@ ReactDOM.render(
         <Route path="/details" element={<AnimeDetail />} />
         <Route path="/list" element={<AnimeCollectionList />} />
         <Route path="/collection" element={<AnimeCollectionDetail />} />
+        <Route path="*" element={<App />} />
       </Routes>
     </BrowserRouter>
   </ApolloProvider>,
