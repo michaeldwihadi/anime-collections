@@ -14,6 +14,13 @@ export const GET_ALL_ANIME_LIST = gql`
           color
         }
       }
+      pageInfo {
+        total
+        perPage
+        currentPage
+        lastPage
+        hasNextPage
+      }
     }
   }
 `;

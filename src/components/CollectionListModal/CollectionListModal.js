@@ -1,200 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import styled from "@emotion/styled";
 
-const ModalBackground = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.25);
-`;
-
-const ModalContainer = styled.div`
-  max-height: 500px;
-  min-height: 375px;
-  width: 500px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
-`;
-
-const TitleContainer = styled.div`
-  display: inline-block;
-  text-align: center;
-`;
-
-const TitleModal = styled.h1`
-  padding: 0;
-  margin: 10px;
-`;
-
-const TitleCloseBtn = styled.button`
-  display: flex;
-  justify-content: flex-end;
-  background-color: transparent;
-  border: none;
-  font-size: 25px;
-  cursor: pointer;
-`;
-
-const Body = styled.div`
-  flex: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px;
-  text-align: center;
-`;
-
-const Footer = styled.div`
-  flex: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Table = styled.table`
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 90px;
-  margin-top: 15px;
-`;
-
-const TableDesc = styled.td`
-  text-align: left;
-  padding-top: 20px;
-  padding-left: 8px;
-  padding-bottom: 8px;
-  padding-right: 8px;
-`;
-
-const TableHeader = styled.td`
-  border-bottom: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  font-weight: bold;
-`;
-
-const TableHeaderButton = styled.td`
-  border-bottom: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  font-weight: bold;
-`;
-
-const TableDescButton = styled.td`
-  padding-top: 20px;
-  text-align: left;
-  width: 25%;
-`;
-
-const AddCollectionBtn = styled.button`
-  background-color: #ffffff;
-  border: none;
-  color: black;
-  padding: 4px 32px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 3px;
-  margin: auto;
-  display: block;
-  font-weight: 600;
-  border: 1px solid black;
-  &:hover {
-    transform: scale(1.02);
-    transition: all 0.4s;
-  }
-`;
-
-const FooterLink = styled(Link)`
-  background-color: #ffffff;
-  border: none;
-  color: black;
-  padding: 8px 177px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 3px;
-  margin: auto;
-  display: block;
-  font-weight: 600;
-  border: 1px solid black;
-  &:hover {
-    transform: scale(1.02);
-    transition: all 0.4s;
-  }
-`;
-
-const LeftBtn = styled.button`
-  background-color: #ffffff;
-  border: none;
-  color: black;
-  padding: 6px 22px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-right: 26rem;
-  margin-left: -25px;
-`;
-
-const RightBtn = styled.button`
-  background-color: #ffffff;
-  border: none;
-  color: black;
-  text-align: center;
-  -webkit-text-decoration: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 6px;
-  font-weight: bold;
-`;
-
-const CollectionInput = styled.input`
-  margin-top: 36px;
-  width: 28rem;
-  padding: 5px;
-  margin-bottom: 35px;
-`;
-
-const CollectionSubmitBtn = styled.input`
-  background-color: #000000;
-  border: none;
-  color: white;
-  padding: 7px 210px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 3px;
-  margin: auto;
-  display: block;
-  font-weight: 600;
-  border: 1px solid black;
-  &:hover {
-    background-color: white;
-    color: black;
-  }
-`;
+import {
+  ModalBackground,
+  ModalContainer,
+  TitleContainer,
+  TitleModal,
+  TitleCloseBtn,
+  Body,
+  Footer,
+  Table,
+  TableDesc,
+  TableHeader,
+  TableHeaderButton,
+  TableDescButton,
+  AddCollectionBtn,
+  FooterLink,
+  LeftBtn,
+  RightBtn,
+  CollectionInput,
+  CollectionSubmitBtn,
+} from "./Style";
 
 const CollectionModal = ({ setOpenModal, animeTitle, animeId, BannerImg }) => {
   const [values, setValues] = useState({

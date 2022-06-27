@@ -1,104 +1,23 @@
 import React, { useState } from "react";
-import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import RemoveCollectionModal from "../components/RemoveCollectionModal";
-import AddNewCollectionModal from "../components/AddNewCollectionModal";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import RemoveCollectionModal from "../../components/RemoveCollectionModal/RemoveCollectionModal";
+import AddNewCollectionModal from "../../components/AddNewCollectionModal/AddNewCollectionModal";
 
-const Table = styled.table`
-  border-collapse: collapse;
-  width: 95%;
-  margin-bottom: 50px;
-  margin-top: 15px;
-  margin-left: 50px;
-  margin-bottom: 80px;
-`;
-
-const TableDesc = styled.td`
-  text-align: left;
-  padding-top: 20px;
-  padding-left: 8px;
-  padding-bottom: 20px;
-  padding-right: 8px;
-  border-bottom: 1px solid #dddddd;
-`;
-
-const TableHeader = styled.td`
-  border-bottom: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  font-weight: bold;
-`;
-
-const RemoveCollectionBtn = styled.button`
-  background-color: #ffffff;
-  border: none;
-  color: black;
-  padding: 4px 32px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 3px;
-  margin: auto;
-  display: block;
-  font-weight: 600;
-  border: 1px solid black;
-  &:hover {
-    transform: scale(1.02);
-    transition: all 0.4s;
-  }
-`;
-
-const AnimeImg = styled.img`
-  width: 70%;
-  box-shadow: 0 0 20px -5px rgb(0 0 0 / 25%);
-  border-radius: 12px;
-`;
-
-const AnimeList = styled.li`
-  list-style: none;
-`;
-
-const AnimeLink = styled(Link)`
-  text-decoration: none;
-`;
-
-const TableImage = styled.td`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 40px;
-`;
-
-const TableRow = styled.tr`
-  border-bottom: 1px solid #dddddd;
-`;
-
-const AnimeListContainer = styled.ul`
-  text-align: center;
-`;
-
-const NewCollectionBtn = styled.button`
-  background-color: #000000;
-  border: none;
-  color: white;
-  padding: 12px 33px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 3px;
-  float: right;
-  margin-top: 80px;
-  margin-bottom: 2px;
-  display: block;
-  font-weight: 600;
-  border: 1px solid black;
-  margin-right: 45px;
-`;
+import {
+  Table,
+  TableDesc,
+  TableHeader,
+  RemoveCollectionBtn,
+  AnimeImg,
+  AnimeList,
+  AnimeLink,
+  TableImage,
+  TableRow,
+  AnimeListContainer,
+  NewCollectionBtn,
+} from "./Style";
 
 const AnimeCollectionList = () => {
   const [openRemoveModal, setOpenRemoveModal] = useState(false);
@@ -134,6 +53,7 @@ const AnimeCollectionList = () => {
     setCollectionName(collectionName);
     setOpenRemoveModal(true);
   };
+
   return (
     <>
       {addNewModalOpen && (
@@ -149,7 +69,13 @@ const AnimeCollectionList = () => {
       <NewCollectionBtn onClick={() => setAddNewModalOpen(true)}>
         Add New Collection
       </NewCollectionBtn>
-      <Table>
+      <Table
+        marginBottom={
+          allCollectionData === null || allCollectionData.length <= 1
+            ? "500px"
+            : "180px"
+        }
+      >
         <tr>
           <TableHeader>Collection Name</TableHeader>
           <TableHeader>Anime List</TableHeader>
