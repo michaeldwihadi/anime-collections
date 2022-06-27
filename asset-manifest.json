@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/anime-collections/static/css/main.6332dac0.css",
+    "main.js": "/anime-collections/static/js/main.8479bc48.js",
+    "index.html": "/anime-collections/index.html",
+    "main.6332dac0.css.map": "/anime-collections/static/css/main.6332dac0.css.map",
+    "main.8479bc48.js.map": "/anime-collections/static/js/main.8479bc48.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6332dac0.css",
+    "static/js/main.8479bc48.js"
+  ]
+}
