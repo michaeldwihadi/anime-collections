@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mobile } from "../../responsive";
 
 export const ModalBackground = styled.div`
   width: 100vw;
@@ -22,6 +23,9 @@ export const ModalContainer = styled.div`
   display: inline-block;
   text-align: center;
   margin-top: 10px;
+  ${mobile({
+    width: "300px",
+  })}
 `;
 
 export const Title = styled.div`
@@ -88,6 +92,9 @@ export const CollectionNoBtn = styled.button`
     background-color: white;
     color: black;
   }
+  ${mobile({
+    padding: "7px 65px",
+  })}
 `;
 
 export const CollectionYesBtn = styled.button`
@@ -108,4 +115,7 @@ export const CollectionYesBtn = styled.button`
     background-color: black;
     color: white;
   }
+  ${mobile({
+    padding: "7px 65px",
+  })}
 `;

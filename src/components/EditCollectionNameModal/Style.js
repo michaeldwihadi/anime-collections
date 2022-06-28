@@ -23,6 +23,9 @@ export const ModalContainer = styled.div`
   display: inline-block;
   text-align: center;
   margin-top: 10px;
+  ${mobile({
+    width: "300px",
+  })}
 `;
 
 export const Title = styled.div`
@@ -31,6 +34,7 @@ export const Title = styled.div`
   margin-left: 30px;
   ${mobile({
     "margin-left": "0",
+    "font-size": "15px",
   })}
 `;
 
@@ -78,6 +82,9 @@ export const CollectionInput = styled.input`
   width: 28rem;
   padding: 5px;
   margin-bottom: 35px;
+  ${mobile({
+    width: "300px",
+  })}
 `;
 
 export const CollectionSubmitBtn = styled.input`
@@ -98,4 +105,7 @@ export const CollectionSubmitBtn = styled.input`
     background-color: white;
     color: black;
   }
+  ${mobile({
+    padding: "7px 135px",
+  })}
 `;

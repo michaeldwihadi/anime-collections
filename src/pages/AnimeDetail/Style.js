@@ -7,8 +7,11 @@ export const AnimeImage = styled.img`
   object-fit: cover;
   margin-right: 50px;
   margin-top: 10px;
-  margin-left: 25rem;
+  margin-left: 17rem;
   border-radius: 12px;
+  ${mobile({
+    "margin-left": "3rem",
+  })}
 `;
 
 export const AnimeTitle = styled.h1`
@@ -68,6 +71,8 @@ export const CollectionButton = styled.button`
     color: white;
   }
   ${mobile({
-    width: "255px",
+    width: "260px",
+    padding: "8px 36px",
+    height: "60px",
   })}
 `;

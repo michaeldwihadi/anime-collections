@@ -8,17 +8,15 @@ export const Container = styled.div`
   justify-content: flex-start;
   margin-top: 60px;
   margin-bottom: 20px;
+  margin-left: 100px;
   ${mobile({
-    "margin-left": "-20px",
+    "margin-left": "12px",
   })}
 `;
 
 export const ListContainer = styled(Link)`
   width: 300px;
-  margin-right: 100px;
-  margin-left: 61px;
-  margin-bottom: 40px;
-  margin-top: 25px;
+  margin: 25px 100px 40px 36px;
   border-radius: 12px;
   -webkit-text-decoration: none;
   text-decoration: none;

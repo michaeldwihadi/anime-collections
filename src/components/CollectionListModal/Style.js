@@ -141,6 +141,9 @@ export const FooterLink = styled(Link)`
     transform: scale(1.02);
     transition: all 0.4s;
   }
+  ${mobile({
+    padding: "8px 120px",
+  })}
 `;
 
 export const LeftBtn = styled.button`
@@ -172,7 +175,7 @@ export const RightBtn = styled.button`
   border-radius: 6px;
   font-weight: bold;
   ${mobile({
-    "margin-right": "14rem",
+    "margin-left": "-13rem",
   })}
 `;
 

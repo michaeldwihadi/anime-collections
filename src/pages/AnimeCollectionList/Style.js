@@ -45,8 +45,8 @@ export const RemoveCollectionBtn = styled.button`
   font-weight: 600;
   border: 1px solid black;
   &:hover {
-    transform: scale(1.02);
-    transition: all 0.4s;
+    background-color: white;
+    color: black;
   }
 `;
 
